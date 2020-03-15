@@ -10,7 +10,7 @@
     <meta name="description" content="{{site.description}}">
     <meta name="author" content="">
     <meta property="og:image" content="{{site.logo}}"/>
-    <meta property="og:title" content="{{site.hashtag}} | {{ site.utc | date: "%B %-d, %Y" }}"/>
+    <meta property="og:title" content="{{site.hashtag}} | {{ site.utc | date: "%-d %B %Y" }}"/>
     <meta property="og:url"  content="{{site.url}}"/>
     <meta property="og:type"  content="website"/>
 
@@ -26,6 +26,7 @@
   </head>
 
   <body>
+<div class="mainboard">
 
     <div class="row">
       <div class="col-sm-12 text-center">
@@ -41,7 +42,7 @@
 
     <div class="row">
       <div class="col-sm-12 text-center">
-        <h2 class="background-highlight">{{ site.utc | date: "%A %B %-d, %Y" }}</h2>
+        <h2 class="background-highlight">{{ site.utc | date: "%A %-d %B %Y" }}</h2>
       </div>
     </div>
 
@@ -74,5 +75,6 @@
 		</script>
     <!-- end of javascript includes  -->
 
+    </div>
   </body>
 </html>
