@@ -3,16 +3,17 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>{% if site.hastag %} {{site.hashtag}} | {% endif %} {% if site.name %} {{site.name}} | {% endif %} {{ site.utc | date: "%B %-d, %Y" }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{site.description}}">
     <meta name="author" content="">
-    <meta property="og:image" content="{{site.logo}}"/>
-    <meta property="og:title" content="{{site.hashtag}} | {{ site.utc | date: "%-d %B %Y" }}"/>
-    <meta property="og:url"  content="{{site.url}}"/>
-    <meta property="og:type"  content="website"/>
+    <meta property="og:image" content="{{site.logo}}" />
+    <meta property="og:title" content="{{site.hashtag}} | {{ site.utc | date: "%-d %B %Y" }}" />
+    <meta property="og:url" content="{{site.url}}" />
+    <meta property="og:type" content="website" />
 
     <!-- Font from google -->
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
@@ -23,58 +24,63 @@
     <!-- custom styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 
-  </head>
+</head>
 
-  <body>
-<div class="mainboard">
+<body>
+    <div class="mainboard">
 
-    <div class="row">
-      <div class="col-sm-12 text-center">
-				<h1 class="background-highlight">{{site.name}}</h1>
-        <h2 class="background-highlight">countdown</h2>
-	       <a href="{{site.externalLink}}"><img src="{{site.logo}}" style="width:40%"/></a>
-      </div>
-    </div> <!-- /row -->
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 class="background-highlight">{{site.name}}</h1>
+                <h2 class="background-highlight">countdown</h2>
+                <a href="{{site.externalLink}}"><img src="{{site.logo}}" style="width:40%" /></a>
+            </div>
+        </div> <!-- /row -->
 
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center"><div id="defaultCountdown"></div></div>
-    </div> <!-- /row -->
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                <div id="defaultCountdown"></div>
+            </div>
+        </div> <!-- /row -->
 
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h2 class="background-highlight">{{ site.utc | date: "%A %-d %B %Y" }}</h2>
-      </div>
-    </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2 class="background-highlight">{{ site.utc | date: "%A %-d %B %Y" }}</h2>
+            </div>
+        </div>
 
-    {% if site.facebookEventLink %}
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <a href="{{site.facebookEventLink}}">RSVP on facebook</a>
-      </div>
-    </div>
-    {% endif %}
+        {% if site.facebookEventLink %}
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <a href="{{site.facebookEventLink}}">RSVP on facebook</a>
+            </div>
+        </div>
+        {% endif %}
 
-    <!-- javascript includes
+        <!-- javascript includes
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Placed at the end of the document so the pages load faster -->
 
-    <!-- jquery  -->
-    <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
+        <!-- jquery  -->
+        <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
 
-    <!-- countdown code -->
-    <script src="assets/js/jquery.countdown.min.js"></script>
+        <!-- countdown code -->
+        <script src="assets/js/jquery.countdown.min.js"></script>
 
-    <!-- start the countdown when the page loads -->
-    <script type="text/javascript">
-  		$(function () {
-  			var holiday = new Date();
-  			holiday = new Date("{{site.utc}}");
-  			$('#defaultCountdown').countdown({until: holiday});
-  			$('#year').text(holiday.getFullYear());
-  		});
-		</script>
-    <!-- end of javascript includes  -->
+        <!-- start the countdown when the page loads -->
+        <script type="text/javascript">
+            $(function() {
+                var holiday = new Date();
+                holiday = new Date("{{site.utc}}");
+                $('#defaultCountdown').countdown({
+                    until: holiday
+                });
+                $('#year').text(holiday.getFullYear());
+            });
+        </script>
+        <!-- end of javascript includes  -->
 
     </div>
-  </body>
+</body>
+
 </html>
